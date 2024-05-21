@@ -1,0 +1,30 @@
+<div class="content-list">
+  <header>
+    <span class="label-list">INÍCIO</span>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Pesquisar"
+      [formControl]="searchControl"
+    />
+  </header>
+  <section>
+    <ng-container *ngIf="!showEmptyList; else emptyList">
+      <app-card-custom
+        *ngFor="let item of list"
+        (emitItem)="cardEmitter($event)"
+        [id]="item.id"
+        [imagePath]="item.imagePath"
+        [cardTitle]="item.cardTitle"
+        [cardDescription]="item.cardDescription"
+        [hasFavorite]="item.hasFavorite"
+      ></app-card-custom>
+    </ng-container>
+    <ng-template #emptyList>
+      <div class="empty-list">
+        <p class="title">Nada foi encontrato</p>
+        <span class="description">Tente realizar uma nova busca.</span>
+      </div>
+    </ng-template>
+  </section>
+</div>

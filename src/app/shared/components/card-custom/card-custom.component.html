@@ -1,0 +1,28 @@
+<div class="card" style="width: 18rem">
+  <div class="group-image">
+    <img [src]="imagePath" class="card-img-top" />
+    <i
+      (click)="onCardEmit()"
+      *ngIf="hasFavorite"
+      class="fa fa-heart text-dark"
+      aria-hidden="true"
+    ></i>
+    <i
+      (click)="onCardEmit()"
+      *ngIf="!hasFavorite"
+      class="fa fa-heart-o text-light"
+      aria-hidden="true"
+    ></i>
+    <div
+      class="blur"
+      [ngClass]="{
+        'has-favorite': hasFavorite,
+        'non-favorite': !hasFavorite
+      }"
+    ></div>
+  </div>
+  <div class="card-body">
+    <span class="card-title">{{ cardTitle }}</span>
+    <span class="card-description">{{ cardDescription }}</span>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+.card {
+  width: 14rem !important;
+  border: 1px solid #5d5d5d !important;
+  border-radius: 13px !important;
+  position: relative;
+
+  .group-image {
+    position: relative;
+
+    .blur {
+      padding: 25px;
+      border-radius: 0px 13px 0px 35px;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      z-index: 1;
+    }
+
+    .has-favorite {
+      background-color: #fff;
+    }
+
+    .non-favorite {
+      backdrop-filter: blur(8px);
+    }
+
+    i {
+      position: absolute;
+      left: 185px;
+      top: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      transition-duration: 0.2s;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.555);
+      z-index: 2;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    i:hover {
+      font-size: 25px;
+      transition-duration: 0.2s;
+      animation: pulse 0.6s infinite;
+    }
+
+    img {
+      border-radius: 12px 12px 0px 0px;
+      position: relative;
+    }
+  }
+
+  .card-body {
+    background-color: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px 0px 12px 12px;
+    padding: 5px 13px 8px;
+
+    .card-title {
+      font-family: "Creepster", system-ui;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 28px;
+      color: #fff;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-description {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 18px;
+      color: #5d5d5d;
+      margin-top: -5px;
+    }
+  }
+}

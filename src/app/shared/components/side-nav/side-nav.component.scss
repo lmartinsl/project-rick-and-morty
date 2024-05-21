@@ -1,0 +1,71 @@
+.navbar {
+  background-color: #0a0a0a;
+  display: block;
+
+  .content-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    align-items: center;
+
+    .title > img {
+      width: 10rem;
+    }
+
+    .content-buttons {
+      .btn-home {
+        border-radius: 12px 0px 0px 12px;
+        border-right: none;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        height: 48px;
+      }
+
+      .btn-home:hover {
+        color: #fff;
+        background-color: #0a0a0a;
+      }
+
+      .btn-favorites {
+        border-radius: 0px 12px 12px 0px;
+        border-left: none;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        height: 48px;
+      }
+
+      .btn-favorites:hover {
+        color: #fff;
+        background-color: #0a0a0a;
+      }
+
+      .count-favorites {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        border-radius: 50px;
+        padding: 2px 8px;
+        margin-left: 8px;
+      }
+
+      .active-home {
+        color: #0a0a0a;
+        background-color: #fff;
+      }
+
+      .active-favorites {
+        color: #fff;
+        background-color: #0a0a0a;
+      }
+
+      .btn {
+        &.active {
+          background-color: #fff;
+          color: #0a0a0a;
+        }
+      }
+    }
+  }
+}

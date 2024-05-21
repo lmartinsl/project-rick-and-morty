@@ -1,0 +1,35 @@
+<div class="content-list">
+  <header>
+    <span class="label-list">FAVORITOS</span>
+  </header>
+  <section>
+    <ng-container *ngIf="favorites.length > 0; else emptyList">
+      <app-card-custom
+        *ngFor="let item of favorites"
+        (emitItem)="cardEmitter($event)"
+        [id]="item.id"
+        [imagePath]="item.imagePath"
+        [cardTitle]="item.cardTitle"
+        [cardDescription]="item.cardDescription"
+        [hasFavorite]="true"
+      ></app-card-custom>
+    </ng-container>
+
+    <ng-template #emptyList>
+      <div class="empty-list">
+        <p class="title">Pareque que você ainda não têm favoritos</p>
+        <span class="description"
+          >Volte à página inicial e escolha os melhores para você.</span
+        >
+        <button
+          (click)="setAction()"
+          [routerLink]="['/home/characters']"
+          type="button"
+          class="mt-3 btn-home btn btn-light"
+        >
+          Voltar ao início
+        </button>
+      </div>
+    </ng-template>
+  </section>
+</div>
